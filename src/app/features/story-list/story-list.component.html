@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Coding Challenge Endava</h2>
+  <div *ngIf="!isLoading" class="spinner-container">
+    <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+  </div>
+  <div [hidden]="!isLoading">
+    <mat-form-field appearance="outline" class="input-container">
+      <mat-label>Search by title</mat-label>
+      <input matInput placeholder="Title!" type="text" [(ngModel)]="search" />
+    </mat-form-field>
+    <button type="button" mat-stroked-button (click)="handleSearch()">Search</button>
+    <mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="id">
+        <mat-header-cell class="mat-cell-id" *matHeaderCellDef> Id </mat-header-cell>
+        <mat-cell class="mat-cell-id" *matCellDef="let element"> {{element.id}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <mat-header-cell class="mat-cell-title" *matHeaderCellDef> Title </mat-header-cell>
+        <mat-cell class="mat-cell-title" *matCellDef="let element"> {{element.title}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="url">
+        <mat-header-cell class="mat-cell-url" *matHeaderCellDef> Link </mat-header-cell>
+        <mat-cell class="mat-cell-url" *matCellDef="let element">
+          <a *ngIf="element.url" [href]="element.url" target="_blank">
+            {{element.url}}
+          </a>
+          <p *ngIf="!element.url">
+            Link not provided
+          </p>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator [length]="totalData" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+      (page)="handlePageChange($event)" aria-label="Select page">
+    </mat-paginator>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+:host {
+  --mat-form-field-container-vertical-padding: 8px !important;
+  --mat-form-field-container-height: 34px !important;
+  --mat-form-field-container-text-size: 15px !important;
+  --mdc-outlined-text-field-label-text-size: 15px !important;
+  --mat-app-text-color: white !important;
+  --mdc-outlined-text-field-input-text-color: white !important;
+  --mdc-outlined-button-label-text-color: white !important;
+  --mat-table-row-item-label-text-color: white !important;
+  --mat-table-row-item-outline-color: #3f51b5 !important;
+  --mat-table-header-headline-color: white !important;
+  --mdc-outlined-button-outline-color: #3f51b5 !important;
+  --mdc-outlined-text-field-label-text-color: white !important;
+  --mat-table-background-color: #18191a !important;
+  --mat-paginator-container-text-color: white !important;
+  --mat-paginator-container-background-color: #18191a !important;
+  --mat-paginator-enabled-icon-color: white !important;
+  --mat-paginator-disabled-icon-color: rgba(255, 255, 255, 0.171) !important;
+  --mat-select-enabled-trigger-text-color: white !important;
+  --mat-select-enabled-arrow-color: #3f51b5 !important;
+  --mdc-outlined-text-field-outline-color: #3f51b5 !important;
+  --mdc-outlined-text-field-hover-outline-color: #3f51b5 !important;
+  --mdc-filled-text-field-hover-active-indicator-color: white !important;
+}
